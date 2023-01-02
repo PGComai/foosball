@@ -1,0 +1,17 @@
+[gd_resource type="SpatialMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://tex/grips_normal.png" type="Texture" id=1]
+[ext_resource path="res://tex/grips_height.png" type="Texture" id=2]
+
+[resource]
+albedo_color = Color( 0.913725, 0.396078, 0.396078, 1 )
+normal_enabled = true
+normal_scale = 1.21
+normal_texture = ExtResource( 1 )
+depth_enabled = true
+depth_scale = 0.05
+depth_deep_parallax = false
+depth_flip_tangent = true
+depth_flip_binormal = true
+depth_texture = ExtResource( 2 )
+uv1_scale = Vector3( 2, 3, 2 )
