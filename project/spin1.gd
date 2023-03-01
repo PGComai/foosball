@@ -1,4 +1,4 @@
-extends RigidBody
+extends RigidBody3D
 
 
 var g = 10

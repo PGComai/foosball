@@ -14,7 +14,7 @@ noise = SubResource( 2 )
 output_port_for_preview = 0
 texture = SubResource( 3 )
 
-[sub_resource type="VisualShaderNodeColorUniform" id=5]
+[sub_resource type="VisualShaderNodeColorParameter" id=5]
 uniform_name = "grass_color"
 default_value_enabled = true
 default_value = Color( 0.360087, 0.564453, 0.22692, 1 )
@@ -27,7 +27,7 @@ operator = 4
 code = "shader_type spatial;
 render_mode specular_schlick_ggx, async_visible;
 
-uniform vec4 grass_color : hint_color = vec4(0.360087, 0.564453, 0.226920, 1.000000);
+uniform vec4 grass_color : source_color = vec4(0.360087, 0.564453, 0.226920, 1.000000);
 uniform sampler2D tex_frg_2;
 
 
@@ -42,7 +42,7 @@ void fragment() {
 	vec3 n_out3p0 = grass_color.rgb;
 	float n_out3p1 = grass_color.a;
 
-// Texture:2
+// Texture2D:2
 	vec4 tex_frg_2_read = texture(tex_frg_2, UV.xy);
 	vec3 n_out2p0 = tex_frg_2_read.rgb;
 	float n_out2p1 = tex_frg_2_read.a;
@@ -94,7 +94,7 @@ nodes/fragment/3/node = SubResource( 5 )
 nodes/fragment/3/position = Vector2( 900, 120 )
 nodes/fragment/4/node = SubResource( 6 )
 nodes/fragment/4/position = Vector2( 1560, 360 )
-nodes/fragment/connections = PoolIntArray( 2, 0, 4, 1, 3, 0, 4, 0, 4, 0, 0, 0 )
+nodes/fragment/connections = PackedInt32Array( 2, 0, 4, 1, 3, 0, 4, 0, 4, 0, 0, 0 )
 
 [resource]
 shader = SubResource( 7 )
